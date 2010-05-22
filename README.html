@@ -1,0 +1,53 @@
+<h2>latex-txp</h2>
+
+This textpattern plugin lets you embed math formulae and other Latex-rendered
+output in textpattern articles.
+
+<p/>
+
+<h3>Installation</h3>
+
+<ol>
+    <li><h4>Install latex2image on your web server</h4>
+        latex-txp depends on the latex2image web service which will render the latex
+        formulae. This plugin expects the latex2image script to be located directly
+        below your webroot where textpattern is located. Example:
+        <pre>
+        http://www.example.com/latex2image.php 
+        </pre>
+        Get latex2image from <a href="http://www.bitbucket.org/jeadorf/latex2image">http://www.bitbucket.org/jeadorf/latex2image</a>.
+        Carefully follow the installation instructions provided by latex2image. You can
+        check whether your latex2image installation works by performing a request like
+        this: 
+        <pre>
+        http://www.example.com/latex2image.php?latex=$$\square$$ 
+        </pre>
+        It should prove operational by showing a small square.
+    </li>
+    <li><h4>Install latex-txp as a textpattern plugin</h4>
+        Copy, paste and install the latex-txp plugin just like any other textpattern
+        plugin in the backend plugin installation tab. You should now be set.
+    </li>
+</ol>
+
+<p/>
+
+<h3>Usage</h3>
+
+Use the &lt;txp:jea_latex&gt; tag to display Latex-rendered formulae in your
+textpattern article. It's highly recommended to wrap your formulae with the
+&lt;notextile&gt; tag as otherwise unwanted characters might slip into the rendered
+formulae. Example:
+<pre>
+&lt;txp:jea_latex&gt;
+   &lt;notextile&gt;
+     \begin{eqnarray*}
+         {n \choose a} {n-a \choose b}
+         &amp;=&amp; \frac{n!}{a!(n-a)!}\frac{(n-a)!}{b!(n-a-b)!} \\
+         &amp;=&amp; \frac{n!}{a!(n-b)!}\frac{(n-b)!}{b!(n-b-a)!} \\
+         &amp;=&amp; {n \choose b} {n-b \choose a}
+     \end{eqnarray*} $\hfill \square$
+  &lt;/notextile&gt;
+&lt;/txp:jea_latex&gt;
+</pre>
+
