@@ -2,7 +2,7 @@
 include_once('src/plugin_util.php');
 
 $plugin['name'] = 'jea_latex_txp';
-$plugin['version'] = '0.1.1.dev';
+$plugin['version'] = '0.1.1';
 $plugin['author'] = 'Julius Adorf';
 $plugin['author_uri'] = 'http://www.juliusadorf.com';
 $plugin['description'] = 'Lets you embed math formulae and other Latex-rendered output in textpattern articles.';
