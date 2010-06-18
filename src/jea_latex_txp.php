@@ -1,7 +1,10 @@
 <?php
 
 function jea_latex($attrs, $thing='') {
-    return "<img src='/latex2image.php?latex=".urlencode($thing)."' alt='".sha1($thing)."'/>";
+    $content = '';
+    $content .= $attrs['content'];
+    $content .= $thing;
+    return "<img src='/latex2image.php?latex=".urlencode($content)."' alt='".sha1($content)."'/>";
 }
 
 ?>
